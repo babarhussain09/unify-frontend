@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { apiHost } from '../constants';
 import {
@@ -14,6 +14,7 @@ import {
     ErrorBanner,
     SuccessBanner,
     CloseButton,
+    CustomLink
 } from '../styles/GlobalStyles.styles';
 import Header from './Header';
 
@@ -79,7 +80,7 @@ const LoginPage = () => {
 
     return (
         <Wrapper>
-            <Header></Header>
+            <Header />
             <MainSection>
                 <FormContainer>
                     <Title>Welcome to Unify!</Title>
@@ -105,6 +106,9 @@ const LoginPage = () => {
                             {isLoading ? <ClipLoader color={'#fff'} loading={true} size={24} /> : 'Login'}
                         </SubmitButton>
                     </Form>
+                    <CustomLink>
+                        Don't have an account? <Link to="/register">Register Here</Link>
+                    </CustomLink>
                     {showErrorBanner && (
                         <ErrorBanner>
                             {message}

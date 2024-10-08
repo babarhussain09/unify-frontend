@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import ClipLoader from 'react-spinners/ClipLoader';
 import {
@@ -14,6 +14,7 @@ import {
     ErrorBanner,
     SuccessBanner,
     CloseButton,
+    CustomLink
 } from '../styles/GlobalStyles.styles';
 import Header from './Header';
 import { apiHost } from "../constants.js";
@@ -105,6 +106,9 @@ const RegisterPage = () => {
                             {isLoading ? <ClipLoader color={'#fff'} loading={true} size={24} /> : 'Register'}
                         </SubmitButton>
                     </Form>
+                    <CustomLink>
+                        Already have an account? <Link to="/login">Login Here</Link>
+                    </CustomLink>
                     {showErrorBanner && (
                         <ErrorBanner>
                             {message}

@@ -426,3 +426,21 @@ export const IconButton = styled.button`
         font-size: 1.2rem;
     }
 `;
+
+export const CustomLink = styled.div`
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+
+  a {
+    color: #1f2937;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #111827;
+    }
+  }
+`;
